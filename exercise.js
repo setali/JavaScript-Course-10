@@ -1,6 +1,68 @@
+////// 9
+
+function sum () {
+  var result = 0
+
+  for (var i = 0; i < arguments.length; i++) {
+    result += arguments[i]
+  }
+
+  return result
+}
+
+function multiply () {
+  var result = 1
+
+  for (var i = 0; i < arguments.length; i++) {
+    result *= arguments[i]
+  }
+
+  return result
+}
+
+function subtraction () {
+  var result = arguments[0]
+
+  for (var i = 1; i < arguments.length; i++) {
+    result -= arguments[i]
+  }
+
+  return result
+}
+
+function division () {
+  var result = arguments[0]
+
+  for (var i = 1; i < arguments.length; i++) {
+    result /= arguments[i]
+  }
+
+  return result
+}
+
+console.log(division(21, 3, 7))
+
+/////// 8
+
+// function getFullName (obj) {
+//   return obj.firstName + ' ' + obj.lastName
+// }
+
+// console.log(getFullName(ali))
+
+//////// 7
+
+// function printFriends (obj) {
+//   for (var friend of obj.friends) {
+//     console.log(friend)
+//   }
+// }
+
+// printFriends(ali)
+
 /////// 6
 
-;[] == ![]
+// ;[] == ![]
 
 ////// 5
 

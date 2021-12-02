@@ -2,270 +2,222 @@
 //   return a + b
 // }
 
-// function mul (a, b) {
-//   return a * b
+// console.log(sum(2, 3))
+// console.log(sum(12, 3))
+
+// / \ ` ~ ! @ # $ % ^ & * () - _ [] {} ' " | <> ? , .
+
+// kebab-case-naming => my-first-name
+// snake-case-naming => my_first_name
+// camelCaseNaming => myFirstName
+// PascalCaseNaming => MyFirstName
+// UPPER_CASE_NAMING => MY_FIRST_NAME
+
+// var myFirstName = 'Ali'
+
+// console.log(myFirstName)
+
+// var my_first_name = 'Ali'
+
+// console.log(my_first_name)
+
+// var obj = {
+//   'my-first-name': 'ali'
 // }
 
-// var noop = function () {}
+// console.log(obj['my-first-name'])
 
-// // const noop = () => {}
-
-// function operate (a, b, operator = noop) {
-//   //   console.log(operator)
-
-//   return operator(a, b)
-
-//   //   if (operator) {
-//   //     return operator(a, b)
-//   //   }
-// }
-
-// var a = operate(2, 5)
-
-// console.log(a)
-// function operate (operator, a, b) {
-//   return operator(a, b)
-// }
-
-// // var a = operate(mul, 2, 5)
-
-// var a = operate(
-//   function (a, b) {
-//     return a ** b
-//   },
-//   2,
-//   5
-// )
-
-// console.log(a)
-// var func = function () {
+// setTimeout(function () {
 //   console.log('salam')
+// }, 1000)
+// console.log(2 + 3)
+// console.log('Hello')
+// setTimeout(function () {
+//   console.log('salam')
+// }, 1000)
+// setTimeout(function () {
+//   console.log('salam')
+// }, 1000)
+// setTimeout(function () {
+//   console.log('salam')
+// }, 1000)
+
+// function func () {
+//   for (var i = 0; i < 5; i++) {
+//     setTimeout(
+//       function (j) {
+//         console.log(j)
+//       },
+//       1000,
+//       i
+//     )
+//     // ;(function (j) {
+//     //   setTimeout(function () {
+//     //     console.log(j)
+//     //   }, 1000)
+//     // })(i)
+//   }
 // }
 
 // func()
 
-// // function sum (a = 0, b = 0, c = 0, d = 10) {
-// function sum () {
-//   console.log('a:', a)
-//   //   if (c === undefined) {
-//   //     c = 0
-//   //   }
+// var a = 0
 
-//   //   c = c ? c : 0
+// setInterval(function () {
+//   console.log('salam')
+//   console.log(++a)
+// }, 1000)
 
-//   //   c = c || 0
+// setTimeout(function () {
+//   console.log('salam')
+// }, 3000)
 
-//   var result = 0
-//   for (var i = 0; i < arguments.length; i++) {
-//     // result = result + arguments[i]
-//     result += arguments[i]
+// var a = `salam ${(function () {
+//   console.log('hasan')
+//   return 'ali'
+// })()}`
+
+// console.log(a)
+
+// ;(function (a, b) {
+//   console.log('salam', a + b)
+// })(2, 3)
+
+// function Counter () {
+//   var counter = 0
+
+//   function increase () {
+//     counter++
+//     console.log(counter)
+//   }
+
+//   function decrease () {
+//     counter--
+//     console.log(counter)
+//   }
+
+//   return {
+//     increase,
+//     decrease
+//   }
+// }
+
+// var myCounter = Counter()
+// var myCounter2 = Counter()
+
+// console.log(myCounter)
+
+// function func (a) {
+//   return function (b) {
+//     return function (c) {
+//       return a + b + c
+//     }
+//   }
+// }
+
+// // var result = func(2)(5)(7)
+
+// var add10 = func(10)
+
+// console.log(add10(2)(6))
+// console.log(add10(12)(6))
+
+// var add25 = func(25)
+// console.log(add25(6)(7))
+
+// var add32 = add25(7)
+
+// console.log(add32(8))
+
+// console.log(result)
+
+// func()
+
+// function func () {
+//   // var count
+//   console.log('salam')
+//   console.log(count)
+//   var count = 5
+// }
+
+// // var a = 'Ali'
+// window.a = 'Ali' // Is better
+// // a = 'Ali'
+
+// function func () {
+//   window.b = 'Hasan'
+//   c = 'Qoli'
+//   window.a = 'Eli'
+//   var g = 'Saeed'
+
+// }
+
+// func()
+
+// function jquery () {
+
+// }
+
+// window.$ = jquery
+
+// var count = 5
+
+// var b = 10
+
+// function func () {
+//   var b = 20
+
+//   function func2 () {
+//     console.log('func2:', b)
+//   }
+
+//   func2()
+//   console.log('func:', count)
+
+//   console.log('func:', b)
+// }
+
+// func()
+
+// console.log(b)
+// console.log(count)
+
+// var obj = {
+//   'first-name': 'ali', // firstName
+//   'friends-list': [null, { 'last-name': 'Mousavi' }, 'Hasan-Qoli'],
+//   'my-family': {}
+// }
+
+// function factorial (n) {
+//   var result = n
+
+//   for (var i = n - 1; i > 0; i--) {
+//     result = result * i
 //   }
 
 //   return result
 // }
 
-// console.log(sum(2, 3, 5))
-// console.log(sum(2, 3))
-
-// console.log(sum(5, 10, 20, 5, 6))
-
-// var func = function () {
-//   console.log('salam')
+// function factorial (n) {
+//   return n === 1 ? 1 : n * factorial(n - 1)
+//   //   if (n === 1) {
+//   //     return 1
+//   //   } else {
+//   //     return n * factorial(n - 1)
+//   //   }
 // }
 
-// func()
+// console.time('factorial')
 
-// function sum (a, b) {
-//   var result = a + b
+// var result = factorial(150)
 
-//   console.log('salam')
+// console.timeEnd('factorial')
 
-//   return result
+// console.log(result)
 
-//   console.log('HI')
-// }
-
-// var r = sum(5, 8)
-
-// console.log(r)
-
-// console.log(sum(2, 3))
-// console.log(sum(6, 3))
-// console.log(sum(4, 12))
-
-// var person = {
-//   name: 'Ali',
-//   family: 'Mousavi',
-//   age: 32
-//   //   key: 'SALAM',
-//   //   propertyName: 'test'
-// }
-
-// console.log('gender' in person)
-
-// var propertyName = 'age'
-
-// console.log(person[propertyName]) // => person.age
-// console.log(person.propertyName)
-
-// for (var key in person) {
-//   console.log(key, person[key])
-//   //   console.log(key, person.key)
-// }
-
-// var str = 'salam'
-// for (var i = 0; i < str.length; i++) {
-//   console.log(str[i])
-// }
-
-// for (var ali of 'salam') {
-//   console.log(ali)
-// }
-
-// var friends = ['Ali', 'Eli', 'Qoli', 'Fati']
-
-// for (var friend of friends) {
-//   console.log(friend)
-// }
-
-// for (var i = 0; i < friends.length; i++) {
-//   console.log(friends[i])
-// }
-
-// for (var i = 0; i < 10; i++) {
-//   if (i === 5) {
-//     break
-//   }
-
-//   console.log(i)
-// }
-
-// var i = 0
-// do {
-//   if (i % 2) {
-//     console.log(i + ' salam')
-//   } else {
-//     console.log(i + ' Hi')
-//   }
-//   i++
-// } while (i >= 10)
-
-// var i = 0
-// while (i >= 10) {
-//   if (i % 2) {
-//     console.log(i + ' salam')
-//   } else {
-//     console.log(i + ' Hi')
-//   }
-//   i++
-// }
-
-// for (var i = 0; i <= 10; i++) {
-//   if (i % 2) {
-//     console.log(i + ' salam')
-//   } else {
-//     console.log(i + ' Hi')
-//   }
-// }
-
-// var a = 80
-
-// if (a < 100) {
-//   console.log('a is less than 100')
-
-//   if (a < 50) {
-//     console.log('a is less than 50')
-//   } else if (a === 50) {
-//     console.log('a is equal 50')
-//   } else {
-//     console.log('a is greater than 50')
-//   }
-// }
-
-// var a = 16
-
-// // a % 2 ? console.log('Odd') : console.log('Even')
-// !(a % 2) ? console.log('Even') : console.log('Odd')
-
-// console.log(a % 2 ? 'Odd' : 'Even')
-
-// if (a % 2) {
-//   console.log('Odd')
-// } else {
-//   console.log('Even')
-// }
-
-// var a = 15
-
-// a === 10 ? console.log('is 10') : console.log('is not 10')
-
-// var variable = 'b'
-
-// switch (variable) {
-//   case 'A':
-//   case 'a':
-//     console.log('is A')
-//     break
-
-//   case 'B':
-//   case 'b':
-//     console.log('is B')
-//     break
-
-//   case 'C':
-//   case 'c':
-//     console.log('is C')
-//     break
-
-//   default:
-//     console.log('is not A,B,C')
-// }
-
-// var a = 16
-
-// console.log(a % 2)
-
-// if (a % 2) {
-//   console.log('Odd')
-// } else {
-//   console.log('Even')
-// }
-
-// if (false) console.log('salam')
-
-// console.log('hello')
-
-// var a = 10
-
-// if (a < 10) {
-//   console.log('A is less than 10')
-// } else if (a === 10) {
-//   console.log('A is equal 10')
-// } else {
-//   console.log('A is greater than 10')
-// }
-
-// if ({} && 12) {
-//   console.log('salam')
-// } else {
-//   console.log('Hello')
-// }
-
-// console.log('Hi')
-
-// var person = {
-//   //   name: 'Ali Mousavi',
-//   age: 32
-// }
-
-// console.log('Welcome ' + (person.name || 'Unknown user'))
-
-// 0 & 0 => 0
-// 1 & 0 => 0
-// 0 & 1 => 0
-// 1 & 1 => 1
-
-// 0 | 0 => 0
-// 1 | 0 => 1
-// 0 | 1 => 1
-// 1 | 1 => 1
+// 5! = 5 * 4 * 3 * 2 * 1
+// 5! = 5 * 4!
+// 4! = 4 * 3!
+// 3! = 3 * 2!
+// 2! = 2 * 1!
+// 1! = 1
