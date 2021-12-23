@@ -1,26 +1,48 @@
+////////// 14
+
+var ali = {}
+
+ali.ali = ali
+
+///////// 13
+
+function power (a, b) {
+  return b === 1 ? a : a * power(a, b - 1)
+
+  // var result = a
+
+  // for (var i = 1; i < b; i++) {
+  //   result *= a
+  // }
+
+  // return result
+}
+
+// console.log(power(2, 10))
+
 /////// 12
 
-var number = 16
+// var number = 16
 
-if (number % 2) {
-  console.log('Odd')
-} else {
-  console.log('Even')
-}
+// if (number % 2) {
+//   console.log('Odd')
+// } else {
+//   console.log('Even')
+// }
 
-number % 2 ? console.log('Odd') : console.log('Even')
+// number % 2 ? console.log('Odd') : console.log('Even')
 
-console.log(number % 2 ? 'Odd' : 'Even')
+// console.log(number % 2 ? 'Odd' : 'Even')
 
-switch (number % 2) {
-  case 1:
-    console.log('Odd')
-    break
+// switch (number % 2) {
+//   case 1:
+//     console.log('Odd')
+//     break
 
-  case 0:
-    console.log('Even')
-    break
-}
+//   case 0:
+//     console.log('Even')
+//     break
+// }
 
 /////// 11
 
