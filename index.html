@@ -9,30 +9,21 @@
   <body>
     <h2>JavaScript Course</h2>
 
-    <!-- <div
-      onmouseover="handleMouse()"
-      id="my-element"
-      style="width: 100px; height: 100px;background-color: aqua;"
-    ></div> -->
+    <script src="./index.js"></script>
 
-    <script src="./exercise.js"></script>
+    <script>
+      // slideshow(['/1.png', '/2.png'])
 
-    <!-- <script>
-      function handleClick (event) {
-        console.log(event.target)
+      try {
+        console.log(family)
+        slideshow(5)
+      } catch (error) {
+        console.log(error instanceof Error)
+      } finally {
+        console.log('Finally')
       }
 
-      function handleMouse () {
-        console.log('Mouse over')
-      }
-
-      var element = document.getElementById('my-element')
-
-      element.addEventListener('click', handleClick)
-
-      element.addEventListener('click', function () {
-        console.log('Ali')
-      })
-    </script> -->
+      console.log('salam')
+    </script>
   </body>
 </html>
