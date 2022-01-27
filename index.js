@@ -1,258 +1,67 @@
-// function Animal (type) {
-//   this.type = type
-//   this.eat = function () {
-//     console.log('HUM HUM')
-//   }
-// }
+class Person {
+  static [Symbol.hasInstance] (instance) {
+    if (Array.isArray(instance) || instance === 'Ali') {
+      return true
+    }
+  }
+}
 
-// function Cat (name) {
-//   this.name = name
-//   this.speak = function () {
-//     console.log('MIO MIO')
-//   }
-// }
+const p = new Person()
 
-// Cat.__proto__ = new Animal('CAT')
+console.log([] instanceof Person)
+console.log(p instanceof Person)
+console.log('Ali' instanceof Person)
+console.log({} instanceof Person)
 
-// const a = new Cat('Pishi')
-
-// console.log(a)
-
-// class Person {
-//   // static city = 'Tehran'
-
-//   constructor (name, family) {
-//     console.log(name, family)
-//     this.name = name
-//     this.family = family
-//   }
-
-//   getFullName () {
-//     return `${this.name} ${this.family} ${this.city}`
-//   }
-// }
-
-// Person.city = 'Tehran'
-
-// const ali = new Person('Ali', 'Mousavi')
-// console.log(ali.getFullName())
-// console.log(ali.city)
-// console.log(Person.city)
-
-// function Person (name, family) {
-//   this.name = name
-//   this.family = family
-//   this.getFullName = function () {
-//     return `${this.name} ${this.family}`
-//   }
-// }
-
-// const mohammad = new Person('Mohammad', 'Torki')
-// console.log(mohammad.getFullName())
-
-// function sleep (time, value) {
-//   return new Promise(resolve => {
-//     setTimeout(() => {
-//       resolve(value)
-//     }, time * 1000)
-//   })
-// }
-
-// async function aFunc () {
-//   const arr = [1, 2, 3, 4, 5]
-
-//   for (let i = 0; i < arr.length; i++) {
-//     await sleep(1)
-//     console.log(arr[i])
-//   }
-
-//   // arr.forEach(async el => {
-//   //   await sleep(3)
-//   //   console.log(el)
-//   // })
-// }
-
-// aFunc()
-
-// async function aFunc () {
-//   for (let i = 0; i < 5; i++) {
-//     await sleep(1)
-//     console.log(i)
-//   }
-// }
-
-// aFunc()
-
-// async function aFunc () {
-//   console.log(1)
-//   const data = await sleep(2, 'Ali')
-//   console.log('salam', data)
-
-//   const data2 = await sleep(1, 'Eli')
-//   console.log(2, data2)
-// }
-
-// aFunc()
-
-// function prom () {
-//   return new Promise(resolve => resolve('salam'))
-// }
-
-// function prom () {
-//   return Promise.resolve('salam')
-// }
-
-// async function aFunc () {
-//   return 'salam'
-// }
-
-// aFunc().then(data => console.log(data))
-
-// function request (url) {
-//   return new Promise((resolve, reject) => {
-//     fetch(url)
-//       .then(response => response.json())
-//       .then(data => resolve({ data }))
-//       .catch(err => reject(err))
-//   })
-// }
-
-// request('https://jsonplaceholder.typicode.com/users/1')
-//   .then(response => console.log(response.data))
-//   .catch(err => console.log(err))
-
-// function request (url, method = 'GET') {
-//   return new Promise((resolve, reject) => {
-//     const xhr = new XMLHttpRequest()
-//     xhr.open(method, url)
-//     xhr.send()
-
-//     xhr.onload = function () {
-//       if (xhr.status < 400) {
-//         resolve({
-//           body: {},
-//           text: () => {},
-//           json: () => {
-//             return new Promise((resolve, reject) => {
-//               try {
-//                 const result = JSON.parse(xhr.response)
-//                 resolve(result)
-//               } catch (err) {
-//                 reject(err)
-//               }
-//             })
-//           }
-//         })
-//       } else {
-//         reject('There is an error')
-//       }
+// const obj = {
+//   name: 'Ali',
+//   family: 'Mousavi',
+//   age: 32,
+//   [Symbol.toPrimitive]: function (hint) {
+//     if (hint === 'number') {
+//       return this.age
 //     }
-
-//     xhr.onerror = function () {
-//       reject('There is an error')
+//     if (hint === 'string') {
+//       return `${this.name} ${this.family}`
 //     }
-//   })
+//   }
 // }
 
-// request('https://jsonplaceholder.typicode.com/users/1')
-//   .then(response => response.json())
-//   .then(data => console.log(data))
-//   .catch(err => console.log(err))
+// console.log(+obj)
+// console.log(`Hello ${obj}`)
 
-// function request (url, method = 'GET') {
-//   return new Promise((resolve, reject) => {
-//     const xhr = new XMLHttpRequest()
-//     xhr.open(method, url)
-//     xhr.send()
+// const sym1 = Symbol.for('name')
 
-//     xhr.onload = function () {
-//       if (xhr.status < 400) {
-//         resolve({
-//           config: {},
-//           data: JSON.parse(xhr.response)
-//         })
-//       } else {
-//         reject('There is an error')
-//       }
-//     }
+// console.log(sym1 === Symbol.for('name'))
 
-//     xhr.onerror = function () {
-//       reject('There is an error')
-//     }
-//   })
+// const sym = Symbol()
+
+// const obj = {
+//   family: 'Mousavi',
+//   age: 32,
+//   [sym]: 'Ali'
 // }
 
-// request('https://jsonplaceholder.typicode.com/users/1')
-//   .then(response => response.data)
-//   .then(data => console.log(data))
-//   .catch(err => console.log(err))
-
-// axios('https://jsonplaceholder.typicode.com/users/9')
-//   .then(response => console.log(response.data))
-//   .catch(err => console.log(err))
-
-// function powerBigInt (a, b) {
-//   return new Promise((resolve, reject) => {
-//     if (typeof a !== 'bigint' || typeof b !== 'bigint') {
-//       reject('Numbers must be Big Int')
-//     }
-
-//     resolve(a ** b)
-//   })
+// for (const key in obj) {
+//   console.log(key, obj[key])
 // }
 
-// console.log(1)
+// console.log(JSON.stringify(obj))
 
-// powerBigInt(9999999n, 999999n)
-//   .then(result => console.log(result))
-//   .catch(err => console.log(err))
+// console.log(obj[sym])
 
-// // setTimeout(() => {
-// // const a = 9999999n ** 999999n
-// // console.log(a)
-// // }, 0)
+// const sym1 = Symbol('Ali')
 
-// console.log(2)
+// const sym2 = Symbol('Ali')
 
-// function sleep (time, value) {
-//   return new Promise((resolve, reject) => {
-//     if (typeof time === 'number') {
-//       setTimeout(() => {
-//         const result = value ** 2
-//         resolve(result)
-//       }, time * 1000)
-//     } else {
-//       reject('Time must be a number.')
-//     }
-//   })
-// }
+// console.log(sym1)
 
-// sleep(1)
-//   .then(() => {
-//     console.log('then 1')
-//     return 'Ali'
-//   })
-//   .then(name => console.log(name))
+// console.log(sym2)
 
-// console.log(1)
+// console.log(sym1 === sym2)
 
-// sleep(2).then(() => console.log('Salam'))
+// const a = NaN
 
-// console.log(2)
+// const b = a ?? 5
 
-// sleep(4).then(() => console.log('Hello'))
-
-// console.log(3)
-// const prom = new Promise((resolve, reject) => {
-//   setTimeout(() => {
-//     reject('My Error')
-//   }, 1000)
-// })
-
-// prom
-//   .then(() => {
-//     console.log('Then')
-//   })
-//   .catch(err => {
-//     console.log(err)
-//   })
+// console.log(b)
