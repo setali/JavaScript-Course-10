@@ -1,6 +1,16 @@
+import logo from '../assets/images/logo.png'
+
 export default function renderHead () {
+  const div = document.createElement('div')
+
   const h2 = document.createElement('h2')
   h2.innerText = 'Users list'
 
-  return h2
+  const image = document.createElement('img')
+  image.setAttribute('src', logo)
+
+  div.appendChild(image)
+  div.appendChild(h2)
+
+  return div
 }
